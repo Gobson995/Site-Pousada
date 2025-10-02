@@ -40,13 +40,23 @@ body {
 
 /* Hero */
 .hero {
-  background: url('https://via.placeholder.com/1920x800') center/cover no-repeat;
+  background: url('/img/img\ fundo.jpg') center/cover no-repeat;
   color: var(--white);
   height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: var(--primary);
+  font-weight: 900;
+}
+
+.hero .titulo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--primary);
+  
 }
 .hero-content h1 {
   font-size: 2.5rem;
