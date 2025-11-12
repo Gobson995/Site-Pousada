@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solicitar Reserva - Pousada Recanto Sereno</title>
+    <title>Solicitar Reserva - Pousada Nonno Fiorindo</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,102 +16,97 @@
 <body>
 
     <header class="header">
-        <div class="container">
-            <a href="index.html" class="logo"> Pousada Recanto Sereno
-            </a>
-            <nav class="nav">
-                <ul class="nav-menu">
-                    <li><a href="index.html#hero">Início</a></li>
-                    <li><a href="index.html#oferece">A Pousada</a></li>
-                    <li><a href="index.html#fazer">O que fazer</a></li>
-                    <li><a href="index.html#local">Localização</a></li>
-                    <li><a href="reserva.html" class="btn btn-primary">Reservar</a></li>
-                </ul>
-            </nav>
-            <div class="burger-menu">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </div>
+    <div class="container">
+        <a href="index.html" class="logo">
+        Pousada Nonno Fiorindo
+        </a>
+    <nav class="nav">
+    <ul class="nav-menu">
+        <li><a href="index.html#hero">Início</a></li>
+        <li><a href="index.html#oferece">A Pousada</a></li>
+        <li><a href="index.html#fazer">O que fazer</a></li>
+        <li><a href="index.html#local">Localização</a></li>
+        <li><a href="reserva.html" class="btn btn-primary">Reservar</a></li>
+    </ul>
+    </nav>
+    <div class="burger-menu">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+    </div>
+    </div>
     </header>
 
     <main>
-        <section id="reserva" class="section-padding">
-            <div class="container reserva-container">
-                <h2 class="section-title">Solicite sua Reserva</h2>
-                <p class="section-subtitle">
-                    Preencha o formulário abaixo e entraremos em contato o mais breve possível para confirmar sua estadia.
-                </p>
-
-                <form action="enviar-reserva.php" method="POST" class="reserva-form">
-
-                    <div class="form-group">
-                        <label for="nome">Nome Completo</label>
-                        <input type="text" id="nome" name="nome" required>
-                    </div>
-
-                    <div class="form-group-grid">
-                        <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="telefone">Telefone / WhatsApp</label>
-                            <input type="tel" id="telefone" name="telefone" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group-grid">
-                        <div class="form-group">
-                            <label for="checkin">Data de Check-in</label>
-                            <input type="date" id="checkin" name="checkin" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="checkout">Data de Check-out</label>
-                            <input type="date" id="checkout" name="checkout" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="hospedes">Número de Hóspedes</label>
-                        <input type="number" id="hospedes" name="hospedes" min="1" value="2" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="mensagem">Mensagem (Opcional)</label>
-                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Alguma observação? Ex: prefiro quarto com vista, etc."></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-full">Enviar Solicitação</button>
-                </form>
-
-                <div class="whatsapp-link-container">
-                    <p>
-                        <strong>Prefere agilidade?</strong>
-                        <br>
-                        <a href="https://api.whatsapp.com/send?phone=5547999998888&text=Olá!%20Gostaria%20de%20fazer%20uma%20reserva." target="_blank">
-                            <i class="fab fa-whatsapp"></i>
-                            Fale conosco direto pelo WhatsApp!
-                        </a>
-                    </p>
-                </div>
-
-            </div>
-        </section>
+    <section id="reserva" class="section-padding">
+    <div class="container reserva-container">
+        <h2 class="section-title">Solicite sua Reserva</h2>
+        <p class="section-subtitle">
+        Preencha o formulário abaixo e entraremos em contato o mais breve possível para confirmar sua estadia.
+        </p>
+    <form action="enviar-reserva.php" method="POST" class="reserva-form">
+    <div class="form-group">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" required>
+    </div>
+    <div class="form-group-grid">
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+        <label for="telefone">Telefone / WhatsApp</label>
+        <input type="tel" id="telefone" name="telefone" required>
+    </div>
+    </div>
+    <div class="form-group-grid">
+    <div class="form-group">
+        <label for="checkin">Data de Check-in</label>
+        <input type="date" id="checkin" name="checkin" required>
+    </div>
+    <div class="form-group">
+        <label for="checkout">Data de Check-out</label>
+        <input type="date" id="checkout" name="checkout" required>
+    </div>
+    </div>
+    <div class="form-group">
+        <label for="hospedes">Número de Hóspedes</label>
+        <input type="number" id="hospedes" name="hospedes" min="1" value="2" required>
+    </div>
+    <div class="form-group">
+        <label for="mensagem">Mensagem (Opcional)</label>
+        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Alguma observação?"></textarea>
+    </div>  
+    <div id="form-message" style="display: none;"></div>
+        <button type="submit" id="submit-button" class="btn btn-primary btn-full">Enviar Solicitação</button>
+    </form>
+    <div class="whatsapp-link-container">
+        <p>
+        <strong>Prefere agilidade?</strong>
+        <br>
+        <a href="https://api.whatsapp.com/send?phone=5548991130603&text=Olá!%20Gostaria%20de%20fazer%20uma%20reserva." 
+        target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        Fale conosco direto pelo WhatsApp!
+        </a>
+        </p>
+    </div>
+    </div>
+    </section>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Pousada Nonno Fiorindo. Todos os direitos reservados.</p>
-            <p>Estrada Municipal, SN - jacinto Machado, SC</p>
-            <div class="social-icons">
-                <a href="https://www.instagram.com/pousadanonnofiorindo/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/p/Pousada-Nonno-Fiorindo-61550575800020/" target="_blank"><i class="fab fa-facebook"></i></a>
-            </div>
-        </div>
+    <div class="container">
+        <p>&copy; 2025 Pousada Nonno Fiorindo. Todos os direitos reservados.</p>
+        <p>Estrada Municipal, SN - jacinto Machado, SC</p>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/pousadanonnofiorindo/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/p/Pousada-Nonno-Fiorindo-61550575800020/" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+    </div>
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/form-reserva.js"></script>
 </body>
 </html>

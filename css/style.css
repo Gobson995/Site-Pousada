@@ -1,4 +1,3 @@
-/* --- Variáveis de Cor e Configurações Globais --- */
 :root {
     --primary-green: #2c5c3b;
     --primary-yellow: #f4c02f;
@@ -65,7 +64,6 @@ ul {
     margin: 0 auto 2rem auto;
 }
 
-/* --- Botões --- */
 .btn {
     display: inline-block;
     padding: 0.8rem 1.8rem;
@@ -90,7 +88,6 @@ ul {
     background-color: #dab024;
 }
 
-/* --- 1. Header --- */
 .header {
     background-color: var(--text-light);
     height: var(--header-height);
@@ -108,6 +105,7 @@ ul {
 }
 
 .logo {
+    display: flex;
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--primary-green);
@@ -126,7 +124,6 @@ ul {
     padding: 0.5rem 0;
 }
 
-/* Efeito de sublinhado no hover */
 .nav-menu a:not(.btn)::after {
     content: '';
     position: absolute;
@@ -142,7 +139,6 @@ ul {
     width: 100%;
 }
 
-/* --- Menu Mobile (Burger) --- */
 .burger-menu {
     display: none;
     cursor: pointer;
@@ -156,13 +152,9 @@ ul {
     transition: all 0.3s ease;
 }
 
-/* --- 2. Hero Section --- */
 #hero {
     height: calc(100vh - var(--header-height));
-    /* Substitua pelo caminho da sua imagem */
     background: url('/images/img_fundo.jpg') no-repeat center center/cover;
-    
-    /* Overlay para escurecer a imagem e dar legibilidade */
     background-blend-mode: multiply;
     background-color: rgba(0, 0, 0, 0.4);
     
@@ -186,7 +178,6 @@ ul {
     font-weight: 300;
 }
 
-/* --- 3. O que oferece --- */
 .offers-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -220,7 +211,6 @@ ul {
     padding: 0 1.5rem 1.5rem 1.5rem;
 }
 
-/* --- 4. O que fazer --- */
 #fazer {
     background-color: var(--text-light);
 }
@@ -250,12 +240,10 @@ ul {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* --- 5. Onde fica (Mapa) --- */
 .map-container {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    /* Aspect ratio 16:9 */
     position: relative;
     padding-bottom: 56.25%; 
     height: 0;
@@ -270,7 +258,6 @@ ul {
     border: 0;
 }
 
-/* --- 6. Botão WhatsApp --- */
 .whatsapp-button {
     position: fixed;
     bottom: 1.5rem;
@@ -293,7 +280,6 @@ ul {
     transform: scale(1.1);
 }
 
-/* --- 7. Footer --- */
 .footer {
     background-color: var(--primary-green);
     color: var(--text-light);
@@ -322,8 +308,6 @@ ul {
     opacity: 0.7;
 }
 
-/* --- Media Queries (Responsividade) --- */
-
 /* Tablet */
 @media (min-width: 768px) {
     .hero-content h1 {
@@ -337,13 +321,12 @@ ul {
     .activity-grid {
         grid-template-columns: 1fr 1fr;
     }
-    
-    /* Inverte a ordem no tablet/desktop */
+
     .activity-content {
-        order: 1; /* Coloca o texto na direita */
+        order: 1;
     }
     .activity-image {
-        order: 0; /* Coloca a imagem na esquerda */
+        order: 0;
     }
 
     /* --- Menu Mobile --- */
@@ -356,7 +339,7 @@ ul {
 @media (max-width: 767px) {
     .nav-menu {
         position: fixed;
-        right: -100%; /* Começa fora da tela */
+        right: -100%;
         top: var(--header-height);
         height: calc(100vh - var(--header-height));
         width: 100%;
@@ -369,7 +352,7 @@ ul {
     }
 
     .nav-menu.nav-active {
-        right: 0; /* Entra na tela */
+        right: 0;
     }
     
     .nav-menu li {
@@ -385,7 +368,6 @@ ul {
         display: block;
     }
     
-    /* Animação do Burger */
     .toggle .line1 {
         transform: rotate(-45deg) translate(-5px, 6px);
     }
@@ -407,8 +389,6 @@ ul {
         font-size: 2.5rem;
     }
 }
-
-/* --- 8. Página de Reserva (Formulário) --- */
 
 .reserva-container {
     max-width: 800px;
@@ -458,7 +438,6 @@ ul {
     gap: 1.5rem;
 }
 
-/* Botão de submit com largura total */
 .btn-full {
     width: 100%;
     padding-top: 1rem;
@@ -466,7 +445,6 @@ ul {
     font-size: 1.1rem;
 }
 
-/* --- Link de WhatsApp abaixo do form --- */
 .whatsapp-link-container {
     text-align: center;
     margin-top: 2.5rem;
@@ -503,11 +481,30 @@ ul {
     vertical-align: middle;
 }
 
-/* --- Media Queries para o formulário --- */
-
 /* Tablet (2 colunas para os grids) */
 @media (min-width: 768px) {
     .form-group-grid {
         grid-template-columns: 1fr 1fr;
     }
+}
+
+.form-message {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
 }
