@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         messageDiv.className = 'form-message';
         const formData = new FormData(form);
 
-        fetch('enviar-reserva.php', {
+        fetch('/enviar-reserva', {
             method: 'POST',
             body: formData
         })
