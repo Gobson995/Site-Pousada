@@ -1,22 +1,14 @@
-const express = require('express');
-const { Resend } = require('resend');
-const multer = require('multer');
-const cors = require('cors');
-require('dotenv').config();
+import { Resend } from 'resend';
 
-const path = require('path');
-
-const app = express();
-const upload = multer();
-const port = 3000;
 const resend = new Resend(process.env.RESEND_API_KEY);
+const emailDeDestino = process.env.SEU_EMAIL_DE_DESTINO;
 
-app.use(cors());
-
-app.use(express.static(path.join(__dirname)));
-
-app.post('/enviar-reserva', upload.none(), async (req, res) => {
+export default async function handler(req, res) {
     
+    if (req.method !== 'POST') {
+        return res.status(405).json({ status: 'error', message: 'Método não permitido.' });
+    }
+
     const { nome, email, telefone, checkin, checkout, hospedes, mensagem } = req.body;
 
     if (!nome || !email || !telefone || !checkin || !checkout) {
@@ -37,10 +29,10 @@ app.post('/enviar-reserva', upload.none(), async (req, res) => {
     try {
         const { data, error } = await resend.emails.send({
             from: 'Pousada Nonno Fiorindo <onboarding@resend.dev>',
-            to: [process.env.SEU_EMAIL_DE_DESTINO],
+            to: [emailDeDestino],
             subject: `Nova Reserva (Site) - ${nome}`,
             html: htmlBody,
-            headers: { 'Reply-To': email, },
+            headers: { 'Reply-To': email },
         });
 
         if (error) {
@@ -54,8 +46,4 @@ app.post('/enviar-reserva', upload.none(), async (req, res) => {
         console.error(e);
         res.status(500).json({ status: 'error', message: 'Houve um erro no servidor.' });
     }
-});
-
-app.listen(port, () => {
-    console.log(`Servidor rodando! Acesse o site em http://localhost:${port}`);
-});
+}

@@ -10,13 +10,25 @@ document.addEventListener('DOMContentLoaded', () => {
         submitButton.innerHTML = 'Enviando...';
         messageDiv.style.display = 'none';
         messageDiv.className = 'form-message';
+        
         const formData = new FormData(form);
+        const dadosDoFormulario = Object.fromEntries(formData.entries());
 
-        fetch('/enviar-reserva', {
+        fetch('/api/server', {
             method: 'POST',
-            body: formData
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dadosDoFormulario)
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(errData => {
+                    throw new Error(errData.message || 'Erro no servidor');
+                });
+            }
+            return response.json();
+        })
         .then(data => {
             messageDiv.innerHTML = data.message;
             messageDiv.style.display = 'block';
@@ -40,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => {
             console.error('Erro de Fetch:', error);
-            messageDiv.innerHTML = 'Erro de conexão. Tente novamente.';
+            messageDiv.innerHTML = error.message || 'Erro de conexão. Tente novamente.';
             messageDiv.classList.add('error');
             messageDiv.style.display = 'block';
             submitButton.disabled = false;
